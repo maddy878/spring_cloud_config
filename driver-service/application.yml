@@ -1,1 +1,33 @@
-
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@10.90.1.105:1521/DEV
+    username: HR
+    password: HR
+    
+  
+  
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    hibernate: 
+      ddl-auto: update
+      
+server:
+  port: 4040
+  
+  
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8771/eureka
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
